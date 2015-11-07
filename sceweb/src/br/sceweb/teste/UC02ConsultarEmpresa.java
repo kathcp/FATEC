@@ -23,6 +23,7 @@ public class UC02ConsultarEmpresa {
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
+		System.out.println("UC02 - Set up");
 		controle = new Controle();
 		//89.424.232/0001-80
 		controle.cadastrarEmpresa(cnpj,nomeDaEmpresa,nomeFantasia,endereco,telefone);
@@ -30,20 +31,22 @@ public class UC02ConsultarEmpresa {
 
 	@Test
 	public void CT01UC02FBConsulta_empresa_com_sucesso(){
-		controle.cadastrarEmpresa(cnpj, nomeDaEmpresa, nomeFantasia, endereco, telefone);
+		System.out.println("CT01UC02FB");
 		controle.consultarEmpresa(cnpj);
-		controle.excluirEmpresa(cnpj);
 	}
 	
 	@Test
 	public void CT02UCA1Consulta_empresa_sem_sucesso(){
+		System.out.println("CT02UC02A1");
+		controle.excluirEmpresa(cnpj);
 		controle.consultarEmpresa(cnpj);	
 	}
 	
 
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
-		//controle.excluirEmpresa(cnpj);
+		System.out.println("UC02 - Tear Down");
+		controle.excluirEmpresa(cnpj);
 	}
 
 }
