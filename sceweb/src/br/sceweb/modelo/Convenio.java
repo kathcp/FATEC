@@ -16,7 +16,7 @@ public class Convenio {
 	
 	private String cnpj;
 	private DateTime dataInicio;
-	private DateTime dataTerminino;
+	//private DateTime dataTerminino;
 	Logger logger = Logger.getLogger(Convenio.class);
 	
 	public String getCNPJ(){
